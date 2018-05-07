@@ -1,623 +1,128 @@
 {
-  "view": {
-    "sales": {
-      "opportunity": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Sales Opportunities"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
+    "record": {
+        "person": {
+            "contact": {
+                "row": {
+                    "PersonName": null,
+                    "PersonCategory": "Contact",
+                    "CompanyName": null,
+                    "JobTitle": null,
+                    "Email": null,
+                    "Phone": null,
+                    "Notes": null
+                },
+                "rowActionItems": [{
+                    "icon": "sap-icon://sales-quote",
+                    "text": "Select Bill"
+                }, {
+                    "icon": "sap-icon://attachment",
+                    "text": "Attachment"
+                }, {
+                    "icon": "sap-icon://group-2",
+                    "text": "Additional Data"
+                }],
+                "toolbar": [{
+                    "fragment": "Title",
+                    "properties": {
+                        "text": "Record Contact(s)"
+                    }
+                }, {
+                    "fragment": "ToolbarSpacer"
+                }, {
+                    "fragment": "SearchField"
+                }],
                 "columns": [
-          {
-            "width": "12em",
-            "label": "Opportunity ID",
-            "visible": true,
-            "sortProperty": "OpportunityID",
-            "filterProperty": "OpportunityID",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>OpportunityID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "width": "12em",
-            "label": "Company Name",
-            "visible": true,
-            "sortProperty": "CompanyName",
-            "filterProperty": "CompanyName",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "width": "12em",
-            "label": "Lead Category",
-            "visible": true,
-            "sortProperty": "LeadCategory",
-            "filterProperty": "LeadCategory",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>LeadCategory"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "width": "12em",
-            "label": "Product / Service",
-            "visible": true,
-            "sortProperty": "ThingName",
-            "filterProperty": "ThingName",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>ThingName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "width": "12em",
-            "label": "Amount",
-            "visible": true,
-            "sortProperty": "Amount",
-            "filterProperty": "Amount",
-            "template": {
-              "fragment": "ObjectNumber",
-              "binding": {  
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "width": "12em",
-            "label": "Closing Date",
-            "visible": true,
-            "sortProperty": "ClosingDate",
-            "filterProperty": "ClosingDate",
-            "template": {
-              "fragment": "Label",
-              "binding": {  
-                "text": "ClosingDate"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-    },
-    "company": {
-      "customer": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Customers"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "12em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Company ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Company Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-    },
-    "person": {
-      "contact": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Contacts"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "12em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Person ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PersonID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Person Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PersonName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Company",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Email",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>EmailAddress"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Phone",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PhoneNumber"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Job Title",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>JobTitle"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
 
-    },
-    "thing": {
-      "product": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Products"
+                    {
+                        "label": "Person Name",
+                        "visible": true,
+                        "sortProperty": "PersonName",
+                        "filterProperty": "PersonName",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>PersonName"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Category",
+                        "visible": true,
+                        "sortProperty": "PersonCategory",
+                        "filterProperty": "PersonCategory",
+                        "template": {
+                            "fragment": "Select_PersonCategory",
+                            "binding": {
+                                "selectedKey": "data>PersonCategory"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Company",
+                        "visible": true,
+                        "sortProperty": "CompanyName",
+                        "filterProperty": "CompanyName",
+                        "template": {
+                            "fragment": "Input_CompanyName",
+                            "binding": {
+                                "value": "data>CompanyName"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Job Title",
+                        "visible": true,
+                        "sortProperty": "JobTitle",
+                        "filterProperty": "JobTitle",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>JobTitle"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Email",
+                        "visible": true,
+                        "sortProperty": "Email",
+                        "filterProperty": "Email",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Email"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Phone",
+                        "visible": true,
+                        "sortProperty": "Phone",
+                        "filterProperty": "Phone",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Phone"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Notes",
+                        "visible": true,
+                        "sortProperty": "Notes",
+                        "filterProperty": "Notes",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Notes"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }
+                ]
             }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "6em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Product ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>ProductID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Product Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>ProductName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Quantity Available",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>QuantityAvailable"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Sales Price",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>SalesPrice"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-
+        }
     }
-  },
- "edit": {
-    "company": {
-      "customer": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Customers"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "12em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Company ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Company Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-    },
-    "person": {
-      "contact": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Contacts"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "12em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Person ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PersonID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Person Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PersonName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Company",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Email",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>EmailAddress"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Phone",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>PhoneNumber"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Job Title",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>JobTitle"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-
-    },
-    "thing": {
-      "product": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Products"
-            }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "6em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Product ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>ProductID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Product Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>ProductName"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Quantity Available",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>QuantityAvailable"
-              }
-            },
-            "mergeDuplicates": false
-          },
-          {
-            "minScreenWidth": "Tablet",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Sales Price",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>SalesPrice"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
-
-    }
-  } 
 }

@@ -110,6 +110,9 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
          * @return  Settings for the Spreadsheet configuration from the data model
          */
         getConfiguration: function (sMethod, sSubject, sClass) {
+            console.log(sMethod);
+            console.log(sSubject);
+            console.log(sClass);
             return (this.getModel("config").getProperty("/" + sMethod + "/" + sSubject + "/" + sClass));
         },
 
@@ -146,10 +149,12 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
          * @param {Object} oConfig  Configuration for the Spreadsheet instance (method + subject + class)
          */
         getFragments: function (oConfig) {
+            console.log(this.getModel("config"));
+            console.log(oConfig);
             for (var i = 0; i < oConfig.columns.length; i++) {
                 var oTemplate = oConfig.columns[i].template;
 
-                var oFragment = sap.ui.xmlfragment("bean.dynamic.Spreadsheet.fragment." + oTemplate.fragment, this);
+                var oFragment = sap.ui.xmlfragment("dynamic.Spreadsheet.fragment." + oTemplate.fragment, this);
                 var aProperties = Object.getOwnPropertyNames(oTemplate.binding);
                 for(var j = 0; j < aProperties.length; j++) {
                     var sProperty = aProperties[j];
@@ -162,7 +167,7 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
             }
             for (var x = 0; x < oConfig.toolbar.length; x++) {
                 var oTemplate = oConfig.toolbar[x];
-                var oFragment = sap.ui.xmlfragment("bean.dynamic.Spreadsheet.fragment." + oTemplate.fragment, this);
+                var oFragment = sap.ui.xmlfragment("dynamic.Spreadsheet.fragment." + oTemplate.fragment, this);
                 if(oTemplate.properties) {
                     var aProperties = Object.getOwnPropertyNames(oTemplate.properties);
                     for(var j = 0; j < aProperties.length; j++) {

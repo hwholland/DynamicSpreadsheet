@@ -25,7 +25,7 @@
             }
 
             var pComponent = new Promise((resolve, reject) => {
-                resolve(getInstance("view", "company", "customer", null));
+                resolve(getInstance("record", "person", "contact", null));
             }).then(function (oComponent) {
                 console.log(oComponent);
                 var oConfigModel = oComponent.getConfigModel();
@@ -105,7 +105,7 @@
                         var sClass = sap.ui.getCore().byId("Select2").getSelectedKey();
                         var oControl = oComponent.getControl(sMethod, sSubject, sClass, null);
                         oControl.setModel(oDataModel, "data");
-                        console.log(oControl);
+                        
                         sap.ui.getCore().byId("page1").addContent(oControl);
                     }
                 }).addStyleClass("sapUiSmallMarginBegin");
@@ -113,8 +113,8 @@
                 oToolbar.addContent(oMethodSelect).addContent(oSubjectSelect).addContent(oClassificationSelect).addContent(oButton);
 
 
-                var oControl = oComponent.getControl("view", "company", "customer", null);
-                console.log(oControl);
+                var oControl = oComponent.getControl("record", "person", "contact", null);
+                
                 oControl.setModel(oDataModel, "data");
         
                 var oPage = new sap.m.Page("page1",{

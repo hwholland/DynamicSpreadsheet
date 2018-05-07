@@ -17,7 +17,7 @@
     },
     "description": "{{description}}",
     "i18n": "model/i18n.properties",
-    "id": "dynamic.Table",
+    "id": "dynamic.Spreadsheet",
     "title": "{{title}}",
     "type": "component"
   },
@@ -47,7 +47,6 @@
       }
     },
     "resourceRoots": {
-      "dynamic/Spreadsheet": "./"
     },
     "resources": {}
   }

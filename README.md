@@ -1,6 +1,6 @@
-# bean.dynamic.Table
+# Dynamic Spreadsheet
 
-This is a component which makes up part of a library of components which each provide a dynamic control (user-interface) in JavaScript, using the OpenUI5 franework.  This component builds a responsive table (sap.m.Table in OpenUI5) based on configurations made in a JSON file.  The data structure modeled in JSON can also be reflected in a database, or any other structured model. 
+This is a component which makes up part of a library of components which each provide a dynamic control (user-interface) in JavaScript, using the OpenUI5 franework.  This component builds a grid table (sap.ui.table.Table in OpenUI5) based on configurations made in a JSON file.  The data structure modeled in JSON can also be reflected in a database, or any other structured model. 
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ OpenUI5 must be downloaded and extracted.  The bootstrap for this component then
 	data-sap-ui-preload="async" 
 	data-sap-ui-language="en" 
 	data-sap-ui-resourceroots='{
-		"bean.dynamic.Table": "./"  }'>
+		"dynamic.Spreadsheet": "./"  }'>
 </script>
 
 ```
@@ -41,61 +41,132 @@ The index.html file is not necessary, but has been included as an example of how
 
 ```
 {
-  "view": {
-    "company": {
-      "customer": {
-        "toolbar": [
-          {
-            "fragment": "Title",
-            "properties": {
-              "text": "Customers"
+    "record": {
+        "person": {
+            "contact": {
+                "row": {
+                    "PersonName": null,
+                    "PersonCategory": "Contact",
+                    "CompanyName": null,
+                    "JobTitle": null,
+                    "Email": null,
+                    "Phone": null,
+                    "Notes": null
+                },
+                "rowActionItems": [{
+                    "icon": "sap-icon://sales-quote",
+                    "text": "Select Bill"
+                }, {
+                    "icon": "sap-icon://attachment",
+                    "text": "Attachment"
+                }, {
+                    "icon": "sap-icon://group-2",
+                    "text": "Additional Data"
+                }],
+                "toolbar": [{
+                    "fragment": "Title",
+                    "properties": {
+                        "text": "Record Contact(s)"
+                    }
+                }, {
+                    "fragment": "ToolbarSpacer"
+                }, {
+                    "fragment": "SearchField"
+                }],
+                "columns": [
+
+                    {
+                        "label": "Person Name",
+                        "visible": true,
+                        "sortProperty": "PersonName",
+                        "filterProperty": "PersonName",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>PersonName"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Category",
+                        "visible": true,
+                        "sortProperty": "PersonCategory",
+                        "filterProperty": "PersonCategory",
+                        "template": {
+                            "fragment": "Select_PersonCategory",
+                            "binding": {
+                                "selectedKey": "data>PersonCategory"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Company",
+                        "visible": true,
+                        "sortProperty": "CompanyName",
+                        "filterProperty": "CompanyName",
+                        "template": {
+                            "fragment": "Input_CompanyName",
+                            "binding": {
+                                "value": "data>CompanyName"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Job Title",
+                        "visible": true,
+                        "sortProperty": "JobTitle",
+                        "filterProperty": "JobTitle",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>JobTitle"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Email",
+                        "visible": true,
+                        "sortProperty": "Email",
+                        "filterProperty": "Email",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Email"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "width": "12em",
+                        "label": "Phone",
+                        "visible": true,
+                        "sortProperty": "Phone",
+                        "filterProperty": "Phone",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Phone"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }, {
+                        "label": "Notes",
+                        "visible": true,
+                        "sortProperty": "Notes",
+                        "filterProperty": "Notes",
+                        "template": {
+                            "fragment": "Input",
+                            "binding": {
+                                "value": "data>Notes"
+                            }
+                        },
+                        "mergeDuplicates": false
+                    }
+                ]
             }
-          },
-          {
-            "fragment": "ToolbarSpacer"
-          },
-          {
-            "fragment": "SearchField"
-          }
-        ],
-        "columns": [
-          {
-            "width": "12em",
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Block",
-            "demandPopin": true,
-            "header": "Company ID",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyID"
-              }
-            },
-            "mergeDuplicates": true
-          },
-          {
-            "minScreenWidth": "Phone",
-            "popinDisplay": "Inline",
-            "demandPopin": true,
-            "header": "Company Name",
-            "visible": true,
-            "hAlign": "Begin",
-            "vAlign": "Middle",
-            "template": {
-              "fragment": "Label",
-              "binding": {
-                "text": "data>CompanyName"
-              }
-            },
-            "mergeDuplicates": false
-          }
-        ]
-      }
+        }
     }
-  }
 }
 ```
 

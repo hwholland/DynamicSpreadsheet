@@ -1,5 +1,5 @@
-sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynamic/Spreadsheet/js/Control'], 
-    function (UIComponent, JSONModel, Control) {
+sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynamic/Spreadsheet/js/Control', 'solo/web/Component'], 
+    function (UIComponent, JSONModel, Control, UICore) {
     "use strict";
 
     /**
@@ -10,7 +10,7 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
      * @subject     DynamicSpreadsheet
      * @extends     sap.ui.core.UIComponent
      */
-    var Component = UIComponent.extend("dynamic.Spreadsheet", {
+    var Component = UICore.extend("dynamic.Spreadsheet", {
 
         /**
          * @property   {Object} metadata settings and information about the application
@@ -29,6 +29,8 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
             this.view = this.getComponentData().view;
             this.spreadsheets = {};
             var oSpreadsheet = this.getSpreadsheet(sMethod, sSubject, sClass);
+            console.log(this);
+            this.components = {};
         },
 
         /**
@@ -110,9 +112,6 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
          * @return  Settings for the Spreadsheet configuration from the data model
          */
         getConfiguration: function (sMethod, sSubject, sClass) {
-            console.log(sMethod);
-            console.log(sSubject);
-            console.log(sClass);
             return (this.getModel("config").getProperty("/" + sMethod + "/" + sSubject + "/" + sClass));
         },
 
@@ -149,8 +148,6 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
          * @param {Object} oConfig  Configuration for the Spreadsheet instance (method + subject + class)
          */
         getFragments: function (oConfig) {
-            console.log(this.getModel("config"));
-            console.log(oConfig);
             for (var i = 0; i < oConfig.columns.length; i++) {
                 var oTemplate = oConfig.columns[i].template;
 
@@ -229,8 +226,17 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'dynami
             this.view = oView;
             var oSpreadsheet = this.getSpreadsheet(sMethod, sSubject, sClass);
             return (oSpreadsheet.getControl());
+        },
+/*
+        onOpenDialog: function (oEvent) {
+            var oSource = oEvent.getSource();
+            var oDialog = sap.ui.xmlfragment("dynamic.Spreadsheet.fragment.Dialog", this);
+            var oFieldGroupIds = oDialog.getFieldGroupIds();
+            oDialog.setFieldGroupIds(oFieldGroupIds);
+            this.view.addDependent(oDialog);
+            oDialog.open();
         }
-
+*/
     });
 
     return Component;

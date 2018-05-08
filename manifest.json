@@ -47,6 +47,7 @@
       }
     },
     "resourceRoots": {
+      "fragment": "./Spreadsheet/fragment"
     },
     "resources": {}
   }

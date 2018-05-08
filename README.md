@@ -175,9 +175,9 @@ Values associated with a fragment property are references to the fragments found
 Once the config file is maintained, the component can be called from an application like so:
 
 ```
-var sMethod = "view";
-var sSubject = "company";
-var sClass = "customer";
+var sMethod = "record";
+var sSubject = "person";
+var sClass = "contact";
 
 var pComponent = new Promise((resolve, reject) => {
 	resolve(getInstance(sMethod, sSubject, sClass, null));
